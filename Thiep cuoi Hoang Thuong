@@ -1,0 +1,755 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thiệp Cưới | Our Wedding</title>
+
+    <!-- Font chữ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #faf7f2;
+            color: #55463d;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            background: rgba(255,255,255,0.95);
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+            color: #a67c52;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #66564b;
+            margin-left: 25px;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #b58a61;
+        }
+
+        /* TRANG BÌA */
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            background:
+                linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.35)),
+                url("assets/anh-bia.jpg") center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content {
+            animation: fadeIn 2s ease;
+        }
+
+        .hero p {
+            font-size: 13px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(55px, 9vw, 105px);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            letter-spacing: 5px;
+            font-weight: normal;
+        }
+
+        .hero .date {
+            margin-top: 30px;
+            font-size: 16px;
+            letter-spacing: 3px;
+        }
+
+        .scroll-down {
+            margin-top: 55px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 13px 30px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .scroll-down:hover {
+            background: white;
+            color: #6d5847;
+        }
+
+        /* PHẦN CHUNG */
+        section {
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            color: #ad8661;
+            font-size: 55px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .sub-title {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #a28b78;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 70px;
+            height: 1px;
+            background: #bd9a77;
+            margin: 25px auto;
+        }
+
+        /* GIỚI THIỆU */
+        .intro {
+            background: #fff;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            margin: auto;
+            line-height: 2;
+            font-size: 14px;
+            color: #77685d;
+        }
+
+        .couple {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin-top: 55px;
+            flex-wrap: wrap;
+        }
+
+        .person {
+            width: 280px;
+        }
+
+        .person img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 150px 150px 0 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .person h3 {
+            font-family: 'Great Vibes', cursive;
+            color: #a77b55;
+            font-size: 42px;
+            font-weight: normal;
+            margin-top: 20px;
+        }
+
+        .person p {
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-top: 8px;
+        }
+
+        .and {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            color: #c4a17e;
+        }
+
+        /* THÔNG TIN LỄ CƯỚI */
+        .wedding-info {
+            background: #f3ede5;
+        }
+
+        .info-box {
+            max-width: 750px;
+            margin: 40px auto 0;
+            padding: 50px 25px;
+            background: #fff;
+            border: 1px solid #e8d9c9;
+            outline: 1px solid #e8d9c9;
+            outline-offset: 8px;
+        }
+
+        .info-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            margin-bottom: 25px;
+            color: #9d7859;
+        }
+
+        .info-box p {
+            line-height: 2.5;
+            font-size: 13px;
+        }
+
+        .info-box .wedding-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 35px;
+            color: #a77d59;
+            margin: 20px 0;
+        }
+
+        /* ĐẾM NGƯỢC */
+        .countdown {
+            background: #fff;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .time-box {
+            width: 110px;
+            height: 110px;
+            border: 1px solid #c7a687;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .time-box span {
+            font-family: 'Playfair Display', serif;
+            font-size: 35px;
+            color: #a77d59;
+        }
+
+        .time-box small {
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* ALBUM ẢNH */
+        .gallery {
+            background: #f3ede5;
+        }
+
+        .gallery-grid {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.025);
+            filter: brightness(0.85);
+        }
+
+        /* LỜI MỜI */
+        .invitation {
+            background: #fff;
+        }
+
+        .invitation-content {
+            max-width: 650px;
+            margin: auto;
+            line-height: 2.2;
+            font-size: 14px;
+        }
+
+        .invitation-content strong {
+            color: #a77d59;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background: #ad8661;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #806044;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #6c5747;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        footer h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 55px;
+            font-weight: normal;
+        }
+
+        footer p {
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-top: 15px;
+        }
+
+        /* NÚT NHẠC */
+        .music-btn {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: none;
+            background: #ad8661;
+            color: white;
+            font-size: 23px;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+
+        .music-btn.playing {
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE MOBILE */
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .couple {
+                gap: 30px;
+            }
+
+            .and {
+                width: 100%;
+            }
+
+            .person {
+                width: min(280px, 90%);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 320px;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .section-title {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NHẠC NỀN -->
+    <audio id="weddingMusic" loop>
+        <source src="assets/wedding.mp3" type="audio/mpeg">
+        Trình duyệt không hỗ trợ phát nhạc.
+    </audio>
+
+    <button class="music-btn" id="musicButton"
+            onclick="toggleMusic()" title="Bật / tắt nhạc">
+        ♪
+    </button>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Our Wedding</div>
+
+        <nav>
+            <a href="#home">TRANG CHỦ</a>
+            <a href="#couple">CÔ DÂU CHÚ RỂ</a>
+            <a href="#wedding">LỄ CƯỚI</a>
+            <a href="#gallery">ALBUM</a>
+            <a href="#invitation">LỜI MỜI</a>
+        </nav>
+    </header>
+
+    <!-- TRANG BÌA -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <p>WE ARE GETTING MARRIED</p>
+
+            <h1>Hải Hoàng  & Nguyễn Thương</h1>
+
+            <h2>THE WEDDING DAY</h2>
+
+            <div class="date">
+                20 . 12 . 2026
+            </div>
+
+            <a href="#couple" class="scroll-down">
+                KHÁM PHÁ THIỆP CƯỚI
+            </a>
+
+        </div>
+    </section>
+
+    <!-- GIỚI THIỆU CẶP ĐÔI -->
+    <section class="intro" id="couple">
+
+        <h2 class="section-title">The Happy Couple</h2>
+
+        <p class="sub-title">CÂU CHUYỆN TÌNH YÊU CỦA CHÚNG MÌNH</p>
+
+        <div class="divider"></div>
+
+        <p class="intro-text">
+            Tình yêu là hành trình mà hai trái tim cùng tìm thấy nhau.
+            Chúng mình thật hạnh phúc khi được đồng hành trên chặng đường
+            phía trước và mong muốn chia sẻ niềm vui này cùng tất cả
+            những người thân yêu.
+        </p>
+
+        <div class="couple">
+
+            <div class="person">
+                <img src="assets/anh-1.jpg" alt="Cô dâu">
+                <h3>Hải Hoàng</h3>
+                <p>THE BRIDE</p>
+            </div>
+
+            <div class="and">&</div>
+
+            <div class="person">
+                <img src="assets/anh-2.jpg" alt="Chú rể">
+                <h3>Nguyễn Thương</h3>
+                <p>THE GROOM</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- THÔNG TIN LỄ CƯỚI -->
+    <section class="wedding-info" id="wedding">
+
+        <h2 class="section-title">Wedding Ceremony</h2>
+
+        <p class="sub-title">THÔNG TIN TIỆC CƯỚI</p>
+
+        <div class="divider"></div>
+
+        <div class="info-box">
+
+            <h3>TRÂN TRỌNG KÍNH MỜI</h3>
+
+            <p>Tham dự lễ thành hôn của chúng mình</p>
+
+            <div class="wedding-date">
+                20.12.2026
+            </div>
+
+            <p><strong>THỜI GIAN</strong></p>
+            <p>17:30 - Chủ Nhật</p>
+
+            <br>
+
+            <p><strong>ĐỊA ĐIỂM</strong></p>
+            <p>Trung tâm tiệc cưới ABC</p>
+            <p>123 Nguyễn Trãi, Hà Nội</p>
+
+            <br>
+
+            <p>Rất mong được đón tiếp bạn trong ngày trọng đại!</p>
+
+            <a class="btn"
+               href="https://www.google.com/maps/search/?api=1&query=123+Nguyen+Trai+Ha+Noi"
+               target="_blank">
+                XEM BẢN ĐỒ
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ĐẾM NGƯỢC -->
+    <section class="countdown">
+
+        <h2 class="section-title">Save The Date</h2>
+
+        <p class="sub-title">ĐẾM NGƯỢC ĐẾN NGÀY HẠNH PHÚC</p>
+
+        <div class="timer">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>NGÀY</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>GIỜ</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>PHÚT</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>GIÂY</small>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ALBUM ẢNH -->
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title">Our Gallery</h2>
+
+        <p class="sub-title">NHỮNG KHOẢNH KHẮC ĐÁNG NHỚ</p>
+
+        <div class="divider"></div>
+
+        <div class="gallery-grid">
+
+            <img src="anh/anh1.jpg" alt="Ảnh cưới 1">
+
+            <img src="anh/anh2.jpg" alt="Ảnh cưới 2">
+
+            <img src="anh/anh1.jpg" alt="Ảnh cưới 3">
+
+            <img src="anh/anh1.jpg" alt="Ảnh cưới 4">
+
+        </div>
+
+    </section>
+
+    <!-- LỜI MỜI -->
+    <section class="invitation" id="invitation">
+
+        <h2 class="section-title">You Are Invited</h2>
+
+        <p class="sub-title">LỜI MỜI THAM DỰ</p>
+
+        <div class="divider"></div>
+
+        <div class="invitation-content">
+
+            <p>
+                Có những khoảnh khắc trong cuộc đời trở nên ý nghĩa
+                hơn khi được sẻ chia cùng những người thân yêu.
+            </p>
+
+            <br>
+
+            <p>
+                Ngày cưới của chúng mình sẽ thật trọn vẹn nếu có sự
+                hiện diện và những lời chúc phúc của bạn.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>Hải Hoàng & Nguyễn Thương</strong>
+            </p>
+
+            <br>
+
+            <p>Hẹn gặp bạn trong ngày đặc biệt nhé!</p>
+
+            <a href="#wedding" class="btn">
+                THÔNG TIN TIỆC CƯỚI
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>Thank You!</h2>
+
+        <p>MINH ANH & QUỐC BẢO</p>
+
+        <p>20 . 12 . 2026</p>
+
+        <br>
+
+        <p>MADE WITH LOVE ♡</p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // BẬT / TẮT NHẠC
+        const music = document.getElementById("weddingMusic");
+        const musicButton = document.getElementById("musicButton");
+
+        async function toggleMusic() {
+
+            if (music.paused) {
+
+                try {
+                    await music.play();
+                    musicButton.classList.add("playing");
+                    musicButton.innerHTML = "♫";
+                } catch (error) {
+                    alert("Không thể phát nhạc. Hãy kiểm tra file wedding.mp3!");
+                }
+
+            } else {
+
+                music.pause();
+                musicButton.classList.remove("playing");
+                musicButton.innerHTML = "♪";
+
+            }
+
+        }
+
+        // ĐỒNG HỒ ĐẾM NGƯỢC
+        // Định dạng: Năm, tháng (0-11), ngày, giờ, phút, giây
+        const weddingDate = new Date(2026, 11, 20, 17, 30, 0);
+
+        function updateCountdown() {
+
+            const now = new Date();
+            const distance = weddingDate.getTime() - now.getTime();
+
+            if (distance <= 0) {
+
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+            const seconds = Math.floor(
+                (distance % (1000 * 60)) / 1000
+            );
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText =
+                String(hours).padStart(2, "0");
+
+            document.getElementById("minutes").innerText =
+                String(minutes).padStart(2, "0");
+
+            document.getElementById("seconds").innerText =
+                String(seconds).padStart(2, "0");
+
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+    </script>
+
+</body>
+</html>
